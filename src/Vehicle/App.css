@@ -9,7 +9,7 @@
 
 .App-header {
   padding: 25px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .App-logo {
@@ -35,10 +35,6 @@
 .vehicleSearchWrapper {
   border: 2px solid white;
   width: 50%;
-}
-
-.clearcover-dropdown-wrapper {
-  max-width: 300px;
 }
 
 .clearcover-dropdown-label {
@@ -92,6 +88,31 @@
   margin-top: 1rem;
 }
 
+.dropdown {
+  padding-bottom: 40px;
+}
+
 .selectInput {
-  margin: 15px 0;
+  margin: 0 auto;
+  width: 350px;
+  padding: 25px;
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
+}
+
+.vehicleFoundWrapper {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.vehicleFound {
+  padding: 2rem;
+}
+
+.vehicleHeader {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.vehicleId {
+  word-wrap: break-word
 }

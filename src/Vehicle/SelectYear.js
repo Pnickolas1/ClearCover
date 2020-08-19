@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Dropdown from '../Shared/assets/Dropdown/Dropdown'
+import { getYears } from '../Services/vehicle'
 
-const defaultState = ''
+function SelectYear({ onChange, year }) {
+  const [options, setOptions] = useState([])
 
-function SelectYear() {
-  const [selectedYear, setYear] = useState(defaultState)
+  useEffect(() => {
+    async function fetchVehicleYears() {
+      const years = await getYears()
+      setOptions(years)
+    }
+    fetchVehicleYears()
+  }, [])
 
   return (
-    <div className="selectInput">
-      <Dropdown label="Year" name="year" selectedValue={selectedYear} />
-    </div>
+    <Dropdown onChange={onChange} label="Year" name="year" options={options} selectedValue={year} />
   )
 }
 

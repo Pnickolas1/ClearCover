@@ -1,19 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-
-function Dropdown({ label, name, selectedValue }) {
-  const [currentValue, setValue] = useState(selectedValue)
+function Dropdown({ label, name, selectedValue, options, onChange }) {
   return (
-    <div className="clearcover-dropdown-wrapper">
+    <div className="dropdown">
       <label className="clearcover-dropdown-label" htmlFor={name}>{label}</label> 
-      <select name={name} value={currentValue} className="select-css" id="clear-cover-dropdown">
+      <select onChange={e => onChange(e)} name={name} value={selectedValue} className="select-css" id="clearcover-dropdown">
         <option value="">Select</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
+        {options.map((opt, i) => (
+          <option key={i} value={opt.value}>{opt.label}</option>
+        ))}
       </select>
     </div>
   )
