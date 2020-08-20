@@ -12,6 +12,10 @@
   /* border: 2px solid red; */
 }
 
+.clearcover-tagline {
+  color: white;
+}
+
 .App-logo {
   width: 33%;
   max-width: 250px;

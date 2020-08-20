@@ -12,7 +12,6 @@ function SelectYear({ onChange, year }) {
     }
     fetchVehicleYears()
   }, [])
-
   return (
     <Dropdown onChange={onChange} label="Year" name="year" options={options} selectedValue={year} />
   )

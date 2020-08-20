@@ -6,17 +6,16 @@ function SelectBodyByYearMakeModel({ onChange, year, make, model, body }) {
   const [options, setOptions] = useState([])
 
   useEffect(() => {
-    async function fetchBodyStyleByYearMakeModel() {
+    async function fetchBodyStyleByYearMakeModel(year, make, model) {
       const makesByYear = await getBodyStylesByModelYearMake(year, make, model)
       setOptions(makesByYear)
     }
     if (year, make, model) {
-      fetchBodyStyleByYearMakeModel()
+      fetchBodyStyleByYearMakeModel(year, make, model)
     }
   }, [year, make, model])
-
   return (
-    <Dropdown onChange={onChange} label="Body Type" name="body" options={options} selectedValue={body}/>
+    <Dropdown onChange={onChange} label="Body" name="body" options={options} selectedValue={body}/>
   )
 }
 

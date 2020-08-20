@@ -7,16 +7,14 @@ function SelectModelByMakeYear({ onChange, year, make, model }) {
   const [options, setOptions] = useState([])
 
   useEffect(() => {
-    async function fetchModelMakeByYear() {
+    async function fetchModelMakeByYear(year, make) {
       const models = await getModelsByMakeYear(year, make)
       setOptions(models)
     }
     if (year && make) {
-      fetchModelMakeByYear(year)
+      fetchModelMakeByYear(year, make)
     }
   }, [year, make])
-
-
   return (
     <Dropdown onChange={onChange} label="Model" name="model" options={options} selectedValue={model}/>
   )

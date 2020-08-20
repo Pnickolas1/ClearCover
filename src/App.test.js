@@ -1,9 +1,22 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './Vehicle/App';
+import React from 'react'
+import { render } from '@testing-library/react'
+import App from './Vehicle/App'
 
-test('renders ready set build link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/ready. set. build./i);
-  expect(linkElement).toBeInTheDocument();
+describe('App renders with header', () => {
+  test('renders clearcover tagline text', () => {
+    const { getByText } = render(<App />);
+    const clearcoverTagline = getByText(/Better coverage for less money/i);
+    expect(clearcoverTagline).toBeInTheDocument();
+  })
+})
+
+describe('Vehicle input labels render', () => {
+  test('All select input labels render', () => {
+    const { getByText } = render(<App />);
+    expect(getByText('Year')).toBeInTheDocument()
+    expect(getByText('Make')).toBeInTheDocument()
+    expect(getByText('Model')).toBeInTheDocument()
+    expect(getByText('Body')).toBeInTheDocument()
+  });
 });
+

@@ -6,15 +6,14 @@ function SelectMakeByYear({ year, onChange, make }) {
   const [options, setMakesByYear] = useState([])
 
   useEffect(() => {
-    async function fetchMakeByYear() {
+    async function fetchMakeByYear(year) {
       const makesByYear = await getMakesByYear(year)
       setMakesByYear(makesByYear)
     }
     if (year) {
-      fetchMakeByYear()
+      fetchMakeByYear(year)
     }
   }, [year])
-
   return (
     <Dropdown onChange={onChange} label="Make" name="make" options={options} selectedValue={make}/>
   )

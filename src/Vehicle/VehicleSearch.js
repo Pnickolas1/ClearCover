@@ -23,7 +23,6 @@ function VehicleNotFound({ vehicle }) {
   )
 }
 
-
 function VehicleSearch({ year, model, make, body }) {
   const [currentVehicle, setVehicle] = useState('')
   const [isFound, setIsFound] = useState(null)
@@ -42,10 +41,10 @@ function VehicleSearch({ year, model, make, body }) {
     }
     if (year && make && model && body) {
       fetchVehicle(year, model, make, body)
+    } else {
+      setIsFound(null)
     }
   }, [year, model, make, body])
-
-  console.log(currentVehicle)
   return (
     <div>
       {isFound ? <VehicleFound vehicle={currentVehicle}/> : isFound === null ? null :  <VehicleNotFound vehicle={currentVehicle}/>}
