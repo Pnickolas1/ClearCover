@@ -8,7 +8,7 @@ function VehicleFound({ vehicle }) {
     <div className="vehicleFoundWrapper">
       <img src={checkmark} className="checkmark" alt="checkmark" />
       <div className="vehicleFound">
-        <div className="vehicleHeader">Vehicle Id Found</div>
+        <div className="vehicleHeader">Vehicle Service Id Found</div>
         <div className="vehicleId">{vehicle.vehicle_services_id}</div>
       </div>
     </div>
