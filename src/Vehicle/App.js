@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <div className="clearcover">
-      <Clearcover/>
-      <SelectVehicle/>
+        <Clearcover/>
+        <SelectVehicle/>
       </div>
     </div>
   );

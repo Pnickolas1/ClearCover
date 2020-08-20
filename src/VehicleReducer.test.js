@@ -1,4 +1,4 @@
-import { vehicleReducer, initialState } from './SelectVehicle'
+import { vehicleReducer, initialState } from './Vehicle/SelectVehicle'
 
 it('Vehicle Reducer - update year', () => {
   const updateAction = {type: 'year', value: 2015 };
